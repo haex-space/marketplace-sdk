@@ -40,8 +40,7 @@
     "typecheck": "tsc --noEmit",
     "release:patch": "node scripts/release.js patch",
     "release:minor": "node scripts/release.js minor",
-    "release:major": "node scripts/release.js major",
-    "publish": "pnpm publish --access public"
+    "release:major": "node scripts/release.js major"
   },
   "author": "haex",
   "license": "ISC",
