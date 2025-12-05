@@ -1,0 +1,63 @@
+{
+  "name": "@haex-space/marketplace-sdk",
+  "version": "0.1.0",
+  "description": "SDK for interacting with the Haex Marketplace API",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haex-space/marketplace-sdk.git"
+  },
+  "homepage": "https://github.com/haex-space/marketplace-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/haex-space/marketplace-sdk/issues"
+  },
+  "keywords": [
+    "haex",
+    "marketplace",
+    "sdk",
+    "api-client"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./vue": {
+      "types": "./dist/vue.d.ts",
+      "import": "./dist/vue.mjs",
+      "require": "./dist/vue.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/vue.ts --format cjs,esm --dts --external vue",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "release:patch": "node scripts/release.js patch",
+    "release:minor": "node scripts/release.js minor",
+    "release:major": "node scripts/release.js major",
+    "publish": "pnpm publish --access public"
+  },
+  "author": "haex",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.1",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vue": "^3.5.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  }
+}
