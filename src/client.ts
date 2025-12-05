@@ -36,7 +36,8 @@ export class MarketplaceClient {
     this.baseUrl = options.baseUrl ?? DEFAULT_BASE_URL
     this.platform = options.platform
     this.appVersion = options.appVersion
-    this.fetchFn = options.fetch ?? globalThis.fetch
+    // Bind fetch to globalThis to prevent "Can only call Window.fetch on instances of Window" error
+    this.fetchFn = options.fetch ?? globalThis.fetch.bind(globalThis)
   }
 
   private async request<T>(
