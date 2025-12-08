@@ -81,6 +81,7 @@ export interface ExtensionListItem {
   publishedAt: string | null
   publisher: PublisherSummary | null
   category: CategorySummary | null
+  versions: ExtensionVersion[]
 }
 
 export interface ExtensionVersion {
