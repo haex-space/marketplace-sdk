@@ -182,6 +182,30 @@ export interface ListReviewsParams {
   limit?: number
 }
 
+// Publisher API Keys (for CLI/CI authentication)
+export interface ApiKey {
+  id: string
+  name: string
+  keyPrefix: string
+  lastUsedAt: string | null
+  expiresAt: string
+  createdAt: string
+  expired: boolean
+}
+
+export interface CreatedApiKey extends Omit<ApiKey, 'expired'> {
+  key: string
+}
+
+export interface ListApiKeysResponse {
+  apiKeys: ApiKey[]
+}
+
+export interface CreateApiKeyResponse {
+  apiKey: CreatedApiKey
+  warning: string
+}
+
 // Error Types
 export interface ApiError {
   error: string
