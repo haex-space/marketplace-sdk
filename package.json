@@ -1,6 +1,6 @@
 {
   "name": "@haex-space/marketplace-sdk",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "SDK for interacting with the Haex Marketplace API",
   "repository": {
     "type": "git",
